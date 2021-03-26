@@ -1,40 +1,681 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+  <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+<body>
+<!-- See http://lab.hakim.se/reveal-js/ for a more in-depth demo -->
+<!-- and https://github.com/hakimel/reveal.js/ for a reference -->
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+<div class="reveal">
+  <!-- Wrap all slides in a single "slides" class -->
+  <div class="slides">
+    <!-- Each section element contains an individual slide -->
+    <!-- Nested sections produce vertically connected slides -->
+    <section id="title">
+      <section>
+        <h1>Coding Styles</h1>
+        <div class="fragment fade-up"><h4 class="fragment shrink">
+          Functional Programming, Angular, Dynamic Language, Coding Smell
+        </h4></div>
+      </section>
+    </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <section id="section2">
+      <section>
+        <h5>Agenda</h5>
+        <div class="fragment">
+          <ul>
+            <li class="fragment fade-up">Static, Weak, Dynamic, Strong Typing System</li>
+            <li class="fragment fade-up">Object Oriented vs Functional Oriented</li>
+            <li class="fragment fade-up">Synchronous vs Asynchronous vs Blocking vs NonBlocking</li>
+            <li class="fragment fade-up">Angular AtlasUx</li>
+          </ul>
+
+        </div>
+      </section>
+    </section>
+
+    <section id="Static">
+      <section>
+        <h6>Static types vs Dynamic types</h6>
+        <img data-src="https://blogs.agilefaqs.com/wp-content/uploads/2009/09/strongweakstaticdynamic_type.png" num="08"
+             height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="ts">
+      <section>
+        <h6>Typescript</h6>
+        <div class="fragment">
+          <p><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html">TypeScript basic types</a></p>
+          <span>
+            <code>string;number;null;boolean;<br>
+            <b style="color: red">void</b>;<b style="color: red">any</b>;
+              <b style="color: red">null</b>;<b style="color: red">undefined</b>;
+              <b style="color: red">never</b>;<b style="color: red">object</b>;
+          </code>
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section id="ts-ad">
+      <section>
+        <h6>Typescript</h6>
+        <div class="fragment">
+
+          <p><a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html">advanced types</a></p>
+          <span>
+            <b style="color: red">intersection type</b>
+  <pre><code data-trim data-noescape>
+    interface Fish {
+      getFeed(string food): string;
+    }
+     interface Bird {
+      getFood(string food): string;
+    }
+    const myFishBird: Fish & Bird = ...
+  </code></pre>
+            <br>
+          </span>
+        </div>
+      </section>
+    </section>
+    <section id="ts-ad2">
+      <section>
+        <h6>Typescript</h6>
+        <div class="fragment">
+
+          <p><a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html">advanced types</a></p>
+          <span>
+            <b style="color: red">type guard</b>
+  <pre><code data-trim data-noescape>
+    interface Fish {
+      getFeed(string food): string;
+    }
+     interface Bird {
+      getFood(string food): string;
+    }
+    const myFishBird: Fish | Bird | null | undefined = ...
+  </code></pre>
+            <br>
+          </span>
+        </div>
+      </section>
+    </section>
+    <section id="Object">
+      <h6>Object Oriented vs Functional Oriented</h6>
+      <img data-src="https://miro.medium.com/max/1470/1*gC-mtCSPHG1mRC1UcT_hVw.png" num="08"
+           height="300px" id="test-img">
+    </section>
+    <section id="Object">
+      <h4> The Expression Problem</h4>
+      <img
+        data-src="https://image.slidesharecdn.com/expressionproblem-160901143359/95/expression-problem-1-638.jpg?cb=1472740534"
+        num="08"
+        height="300px" id="test-img">
+    </section>
+
+    <section id="Object">
+      <h4>Lambda</h4>
+      <img data-src="https://i.stack.imgur.com/6RRX2.png" num="08"
+           height="300px" id="test-img">
+    </section>
+    <section id="Object">
+      <h4>Monad, Functor, Applicatives</h4>
+      <img data-src="https://sanderv1992.github.io/fp/monad/recap.png" num="08"
+           height="300px" id="test-img">
+    </section>
+    <section id="Object">
+      <h4>Rxjs</h4>
+      <pre><code data-trim data-noescape>
+fromEvent(document, 'click')
+  .pipe(scan(count => count + 1, 0))
+  .subscribe(count => console.log(`Clicked ${count} times`));
+  </code></pre>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Synchronous vs Asynchronous vs Blocking vs NonBlocking</h6>
+        <img
+          data-src="https://iamluminousmen-media.s3.amazonaws.com/media/asynchronous-programming-blocking-and-non-blocking/asynchronous-programming-blocking-and-non-blocking-3.JPG"
+          num="08"
+          height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Synchronous vs Asynchronous</h6>
+        <img data-src="https://miro.medium.com/max/587/1*Y41dOkntUbR3I4UCJBx9Xg.png" num="08"
+             height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="Synchronou2s">
+      <section>
+        <h6>Blocking vs NonBlocking </h6>
+        <pre><code data-trim data-noescape>
+// Blocking
+const fs = require('fs');
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
+console.log(data);
+moreWork(); // will run after console.log
+
+// Non-blocking
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+moreWork(); // will run before console.log
+  </code></pre>
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Synchronous blocking</h6>
+        <img data-src="https://pic4.zhimg.com/80/v2-2322d55b7cab60a3db0769bc274975a7_1440w.jpg" num="08"
+             height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Asynchronous blocking</h6>
+        <img data-src="https://pic1.zhimg.com/80/v2-71a1985d68dfc259be9572f162276854_1440w.jpg" num="08"
+             height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Synchronous nonblocking</h6>
+        <img data-src="https://pic3.zhimg.com/80/v2-199c64f7e3191839c3feba5eec7915da_1440w.jpg" num="08"
+             height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Asynchronous nonblocking</h6>
+        <img data-src="https://pic1.zhimg.com/80/v2-64d01af119cb9e0cb21be41fe9a146f4_1440w.jpg" num="08"
+             height="300px" id="test-img">
+
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section>
+        <h6>Angular AtlasUx</h6>
+        <h6>Problems & Improvements</h6>
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+&lt;main *ngIf=&quot;!isLoggedIn()&quot;&gt;
+  Pls login in
+&lt;/main&gt;
+&lt;main *ngIf=&quot;isLoggedIn()&quot;&gt;
+  &lt;section&gt;
+    &lt;app-nav-bar&gt;&lt;/app-nav-bar&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+  </code></pre>
+        <pre><code data-trim data-noescape>
+&lt;div [ngSwitch]=&quot;isLoggedIn()&quot;&gt;
+  &lt;main *ngSwitchCase=&quot;false&quot;&gt;
+    Pls login in
+  &lt;/main&gt;
+  &lt;main *ngSwitchCase=&quot;true&quot;&gt;
+    &lt;section&gt;
+      &lt;app-nav-bar&gt;&lt;/app-nav-bar&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/div&gt;
+  </code></pre>
+      </section>
+    </section>
+
+    <section id="Synchronous">
+      <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+          &lt;mat-list-option *ngFor=&quot;let cl of [0,1,2,3,4,5]; let i = index;&quot;
+                           [value]=&quot;cl&quot;
+                           class=&quot;component-list-option&quot;
+                           (click)=&quot;selectComponent()&quot;&gt;
+            &lt;span class=&quot;option&quot;&gt;Project&lt;/span&gt;
+          &lt;/mat-list-option&gt;
+  </code></pre>
+        <pre><code data-trim data-noescape>
+          &lt;mat-list-option *ngFor=&quot;let cl of [0,1,2,3,4,5], i = index;&quot;
+                           [value]=&quot;cl&quot;
+                           class=&quot;component-list-option&quot;
+                           (click)=&quot;selectComponent()&quot;&gt;
+            &lt;span class=&quot;option&quot;&gt;Project&lt;/span&gt;
+          &lt;/mat-list-option&gt;
+  </code></pre>
+      </section>
+    </section>
+
+
+    <section id="Synchronous">
+      <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+&lt;ng-template matStepLabel&gt;Project&lt;/ng-template&gt;
+  </code></pre>
+        <pre><code data-trim data-noescape>
+ &lt;div matStepLabel&gt;Project&lt;/div&gt;
+  </code></pre>
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+
+      &lt;span class=&quot;single-step&quot; (click)=&quot;changeStep(1)&quot;
+            [ngStyle]=&quot;{'font-weight': (selected_stepper == 1) ? 'bold' : 'inherit'}&quot;&gt;
+            User Management
+      &lt;/span&gt;  </code></pre>
+        <pre><code data-trim data-noescape>
+      &lt;span class=&quot;single-step&quot;
+            (click)=&quot;changeStep(0)&quot;
+            [ngClass]=&quot;{'selectedTab': selectedStepper == 1}&quot;&gt;
+            Project
+      &lt;/span&gt;
+
+      .selectedTab {
+        font-weight: bold;
+      }
+  </code></pre>
+      </section>
+    </section>
+    <section id="Synchronous">
+      <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+
+    &lt;div *ngIf=&quot;selected_stepper == 2&quot;&gt;
+      &lt;app-project-env&gt;
+
+      &lt;/app-project-env&gt;
+    &lt;/div&gt; </code></pre>
+        <pre><code data-trim data-noescape>
+    &lt;div *ngIf=&quot;selected_stepper === 2&quot;&gt;
+        &lt;app-project-env&gt;
+
+        &lt;/app-project-env&gt;
+    &lt;/div&gt;
+  </code></pre>
+      </section>
+    </section>
+
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+
+      setTimeout(() =&gt; {
+        if (this.prevButtonTrigger &amp;&amp; this.prevButtonTrigger !== trigger) {
+          this.prevButtonTrigger.closeMenu();
+          this.prevButtonTrigger = trigger;
+          this.isMatMenuOpen = false;
+          this.isMatMenu2Open = false;
+          trigger.openMenu();
+          this.ren.removeClass(trigger.menu.items.first._elementRef.nativeElement, 'cdk-focused');
+          this.ren.removeClass(trigger.menu.items.first._elementRef.nativeElement, 'cdk-program-focused');
+        } else if (!this.isMatMenuOpen) {
+          this.enteredButton = true;
+          this.prevButtonTrigger = trigger;
+          trigger.openMenu();
+          this.ren.removeClass(trigger.menu.items.first._elementRef.nativeElement, 'cdk-focused');
+          this.ren.removeClass(trigger.menu.items.first._elementRef.nativeElement, 'cdk-program-focused');
+        } else {
+          this.enteredButton = true;
+          this.prevButtonTrigger = trigger;
+        }
+      }, 80);
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+      private readonly static DEPLAY_TIME: number = 80;
+      fromEvent(document, 'click')
+        .pipe(
+          delay(MyClass.DELAY_TIME),
+          doStuff(),
+          doStuff2(),
+      );
+        </code></pre>
+    </section>
+
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+
+        if (this.prevButtonTrigger &amp;&amp; this.prevButtonTrigger !== trigger) {
+          this.prevButtonTrigger.closeMenu();
+          this.prevButtonTrigger = trigger;
+        }
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+        if (this.prevButtonTrigger! !== trigger) {
+          this.prevButtonTrigger.closeMenu();
+          this.prevButtonTrigger = trigger;
+        }
+        if (this.prevButtonTrigger?.isProd) {
+          this.prevButtonTrigger.closeMenu();
+          this.prevButtonTrigger = trigger;
+        }
+        </code></pre>
+    </section>
+
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+
+        if (this.prevButtonTrigger &amp;&amp; this.prevButtonTrigger !== trigger) {
+          this.prevButtonTrigger.closeMenu();
+          this.prevButtonTrigger = trigger;
+        }
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+        if (!this.prevButtonTrigger!) {
+          this.prevButtonTrigger.closeMenu();
+          this.prevButtonTrigger = trigger;
+        }
+        </code></pre>
+    </section>
+
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+    &lt;div *ngIf=&quot;isedit==false;else editediv&quot;&gt;
+        &lt;div class=&quot;project-name-panel&quot;&gt;
+            &lt;div class=&quot;field-div&quot;&gt;
+                &lt;span class=&quot;label&quot;&gt;Project Name&lt;/span&gt;
+                &lt;span&gt;My Matrix Name&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ng-template #editediv&gt;&lt;/ng-template&gt;
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+  &lt;div [ngSwitch]=&quot;isEdit&quot;&gt;
+    &lt;div *ngSwitchCase=&quot;true&quot; class=&quot;project-name-panel&quot;&gt;
+      &lt;div class=&quot;field-div&quot;&gt;
+        &lt;span class=&quot;label&quot;&gt;Project Name&lt;/span&gt;
+        &lt;span&gt;My Matrix Name&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;field-div&quot;&gt;
+        &lt;span class=&quot;label&quot;&gt;Project Description&lt;/span&gt;
+        &lt;span&gt;Here goes some nice description&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngSwitchCase=&quot;false&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+        </code></pre>
+    </section>
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+export class NewProjectComponent implements OnInit {
+  @ViewChild('stepper')
+  private myStepper?: MatStepper;
+  constructor(private securityService: SecurityService) {
+  }
+  ngOnInit(): void {
+    this.myStepper = ...
+  }
+}
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+export class NewProjectComponent implements AfterViewInit {
+  @ViewChild('stepper')
+  myStepper?: MatStepper;
+  constructor(private securityService: SecurityService) {
+  }
+  ngAfterViewInit(): void {
+    this.myStepper = ...
+  }
+}</code></pre>
+    </section>
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+export class NewProjectComponent implements OnInit {
+  myStepper: MatStepper;
+  private myPrivateUsedVar: number;
+  constructor(private securityService: SecurityService) {
+    this.myStepper = ...
+    this.myPrivateUsedVar = 2;
+  }
+  ngOnInit(): void {
+  }
+}
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+export class NewProjectComponent implements OnInit {
+  myStepper: MatStepper;
+  private myPrivateUsedVar: number;
+  constructor(private securityService: SecurityService) {
+    this.myPrivateUsedVar = this.securityService.myPrivateUsedVar;
+  }
+  ngOnInit(): void {
+    this.myStepper = ...
+  }
+}
+}</code></pre>
+    </section>
+    <section>
+      <h4><a href="https://www.pluralsight.com/guides/difference-between-template-driven-and-reactive-forms-angular">
+        Angular Template Driven vs Reactive Driven Form
+      </a></h4>
+    </section>
+    <section style="display: flex">
+      <pre><code data-trim data-noescape>
+  &lt;form #signInForm=&quot;ngForm&quot; (ngSubmit)=&quot;onSubmit(signInForm)&quot;&gt;
+    &lt;mat-form-field appearance=&quot;fill&quot; class=&quot;input-text base-bgcolor mat-form-field&quot;&gt;
+      &lt;mat-label&gt;Email&lt;/mat-label&gt;
+      &lt;input type=&quot;email&quot; [(ngModel)]=&quot;user.emailId&quot;
+             matInput
+             required
+             name=&quot;email&quot;
+             appEmailValidator
+             #email=&quot;ngModel&quot;&gt;
+    &lt;/mat-form-field&gt;
+  &lt;/form&gt;
+        </code></pre>
+    </section>
+    <section style="display: flex">
+      <pre><code data-trim data-noescape>
+&lt;form [formGroup]=&quot;tbpForm&quot; (ngSubmit)=&quot;onSubmit()&quot; class=&quot;tbp-form&quot;&gt;
+  &lt;mat-form-field appearance=&quot;fill&quot; class=&quot;input-text base-bgcolor mat-form-field&quot;&gt;
+    &lt;mat-label&gt;Email&lt;/mat-label&gt;
+    &lt;input type=&quot;email&quot; formControlName=&quot;emailId&quot;
+           matInput
+           required
+           name=&quot;email&quot;
+           appEmailValidator&gt;
+  &lt;/mat-form-field&gt;
+&lt;/form&gt;
+
+tbpForm = new FormGroup({
+  tbpProcess: new FormControl(''),
+  tbpProcessDetail: new FormGroup({
+    projectUrl: new FormControl(''),
+    agent: new FormControl(''),
+    valueSet: new FormControl(''),
+    browser: new FormControl('')
+  })
+});
+}</code></pre>
+    </section>
+    <section style="display: flex">
+      <pre><code data-trim data-noescape>
+.create-new-page {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+
+  &amp; .title {
+    height: 24px;
+   // temp color: rgba(0, 0, 0, 0.87);
+    // font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: 24px;
+  }
+
+  &amp; &gt; div {
+    margin-bottom: 24px;
+  }
+
+  &amp; &gt; div:nth-child(2) {
+    margin-bottom: 32px;
+  }
+}
+}</code></pre>
+    </section>
+    <section style="display: flex">
+      <pre><code data-trim data-noescape>
+.type-name-panel {
+  &amp; ::ng-deep .mat-radio-outer-circle {
+    .mat-radio-checked &amp; {
+      border-color: #006ED3;
+    }
+  }
+
+  &amp; ::ng-deep .mat-radio-inner-circle {
+    // background-color: #006ED3;
+  }
+
+  &amp; ::ng-deep .mat-radio-ripple .mat-ripple-element {
+    // background-color: rgba(#006ED3, 0.26);
+  }
+}
+}</code></pre>
+    </section>
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+.run-hightlight-box {
+  display: grid;
+  width: 100%;
+  background-color: #e3e3e3 !important;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+.run-hightlight-box {
+  display: flex;
+  width: 100%;
+  background-color: #e3e3e3;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}</code></pre>
+    </section>
+
+
+    <section style="display: flex">
+
+        <pre><code data-trim data-noescape>
+    &lt;ng-container *ngIf=&quot;menuItem.children.length &gt; 0&quot; &gt;
+        &lt;button #button mat-button [matMenuTriggerFor]=&quot;levelOne&quot; #levelOneTrigger=&quot;matMenuTrigger&quot; (mouseenter)=&quot;buttonEnter(levelOneTrigger)&quot;  (mouseleave)=&quot;buttonLeave(levelOneTrigger, button)&quot; style=&quot;z-index:1050&quot;&gt;
+          &lt;span class=&quot;icon fa&quot; [ngClass]=&quot;menuItem.icon&quot;&gt;&lt;/span&gt;
+          &lt;span&gt;{{menuItem.label}}
+            &lt;i class=&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/ng-container&gt;
+        </code></pre>
+
+      <pre><code data-trim data-noescape>
+    &lt;div *ngIf=&quot;menuItem.children.length&quot; &gt;
+        &lt;button #button mat-button [matMenuTriggerFor]=&quot;levelOne&quot;
+        #levelOneTrigger=&quot;matMenuTrigger&quot;
+        (mouseenter)=&quot;buttonEnter(levelOneTrigger)&quot;
+        (mouseleave)=&quot;buttonLeave(levelOneTrigger, button)&quot;
+        style=&quot;z-index:1050&quot;&gt;
+          &lt;span class=&quot;icon fa&quot; [ngClass]=&quot;menuItem.icon&quot;&gt;&lt;/span&gt;
+          &lt;span&gt;{{menuItem.label}}
+            &lt;i class=&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+      </code></pre>
+    </section>
+
+    <section>
+      <img
+        data-src="./1.png"
+        height="300px" id="test-img">
+    </section>
+
+    <section>
+      <img
+        data-src="./2.png"
+        height="300px" id="test-imdg">
+    </section>
+
+    <section style="display: flex">
+    <h4>RxJs</h4>
+        <pre><code data-trim data-noescape>
+  isAddingJob: BehaviorSubject&lt;boolean&gt;;
+    constructor() {
+      this.isAddingJob = new BehaviorSubject&lt;boolean&gt;(false);
+  }
+  this.settingPageJobServiceService.isAddingJob.next(false);
+
+  this.settingPageJobServiceService.isAddingJob.subscribe(isAddingNewJob => this.isAddingJob = isAddingNewJob);
+        </code></pre>
+    </section>
+
+    <section style="display: flex">
+      <h4>Q & A</h4>
+    </section>
+
+  </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+  });
+</script>
+<script src="custom.js"></script>
+</body>
 </html>
